@@ -1,0 +1,1 @@
+java -jar jars/mapClientCLI.jar localhost 8080

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mapClient.Controller">
+   <children>
+      <TextField fx:id="ipTxtField" layoutX="20.0" layoutY="55.0" prefHeight="25.0" prefWidth="80.0" text="localhost" AnchorPane.leftAnchor="20.0" />
+      <Label layoutX="31.0" layoutY="35.0" text="Server ip" />
+      <Label layoutX="123.0" layoutY="35.0" text="Server port" />
+      <TextField fx:id="portTxtField" layoutX="120.0" layoutY="55.0" prefHeight="25.0" prefWidth="80.0" text="8080" AnchorPane.leftAnchor="120.0" />
+      <Label layoutX="222.0" layoutY="35.0" text="Table name" />
+      <TextField fx:id="tableNameTxtField" layoutX="220.0" layoutY="55.0" prefHeight="25.0" prefWidth="80.0" />
+      <TextArea fx:id="consoleTxtArea" editable="false" layoutY="90.0" prefHeight="210.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0" />
+      <Button fx:id="predictButton" layoutX="420.0" layoutY="55.0" mnemonicParsing="false" onAction="#predictButtonPressed" prefHeight="25.0" prefWidth="80.0" text="Predict!" />
+      <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+        
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+                <Menu mnemonicParsing="false" text="Learn from">
+                  <items>
+                        <RadioMenuItem fx:id="dataRadioBtn" mnemonicParsing="false" selected="true" text="Data">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="radioGroup" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="fileRadioBtn" mnemonicParsing="false" text="File" toggleGroup="$radioGroup" />
+                  </items>
+                </Menu>
+              <MenuItem fx:id="clearConsole" mnemonicParsing="false" onAction="#clearConsole" text="Clear console" />
+                  <MenuItem fx:id="clearSettings" mnemonicParsing="false" onAction="#clearSettings" text="Clear settings" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutButtonPressed" onMenuValidation="#aboutButtonPressed" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#guideButtonPressed" onMenuValidation="#guideButtonPressed" text="Guide" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="connectButton" layoutX="320.0" layoutY="55.0" mnemonicParsing="false" onAction="#connectButtonPressed" prefHeight="25.0" prefWidth="80.0" text="Connect" />
+   </children>
+</AnchorPane>
